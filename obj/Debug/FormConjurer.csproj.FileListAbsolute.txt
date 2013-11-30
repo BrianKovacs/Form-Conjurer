@@ -1,0 +1,8 @@
+c:\users\charles\documents\visual studio 2013\Projects\FormConjurer\FormConjurer\bin\Debug\FormConjurer.dll
+c:\users\charles\documents\visual studio 2013\Projects\FormConjurer\FormConjurer\bin\Debug\FormConjurer.pdb
+c:\users\charles\documents\visual studio 2013\Projects\FormConjurer\FormConjurer\obj\Debug\FormConjurer.dll
+c:\users\charles\documents\visual studio 2013\Projects\FormConjurer\FormConjurer\obj\Debug\FormConjurer.pdb
+C:\Users\Brian\Documents\GitHub\Form-Conjurer\bin\Debug\FormConjurer.dll
+C:\Users\Brian\Documents\GitHub\Form-Conjurer\bin\Debug\FormConjurer.pdb
+C:\Users\Brian\Documents\GitHub\Form-Conjurer\obj\Debug\FormConjurer.dll
+C:\Users\Brian\Documents\GitHub\Form-Conjurer\obj\Debug\FormConjurer.pdb

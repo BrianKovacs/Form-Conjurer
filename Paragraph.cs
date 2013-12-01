@@ -8,31 +8,27 @@ namespace FormConjurerLib
 {
     public class Paragraph : Input
     {
+
+        public Paragraph(string Content)
+        {
+            this.Content = Content;
+            this.Id = string.Empty;
+            this.Name = string.Empty;
+            this.Class = string.Empty;
+        }
+
         public override string Output(string input)
         {
             string OpenTag = "<p id=\"" + this.Id + "\" name=\"" + this.Name + "\" class=\"" + this.Class + "\">";
             string CloseTag = "</p>";
-
             return OpenTag + input + CloseTag;
         }
 
-        public Paragraph(string Id)
+        public void AddToContent(string input)
         {
-            this.Id = Id;
-            this.Name = string.Empty;
-            this.Class = string.Empty;
+            this.Content += input;
         }
-        public Paragraph(string Id, string Class)
-        {
-            this.Id = Id;
-            this.Class = Class;
-            this.Name = string.Empty;
-        }
-        public Paragraph(string Id, string Class, string Name)
-        {
-            this.Class = Class;
-            this.Id = Id;
-            this.Name = Name;
-        }
+
+
     }
 }

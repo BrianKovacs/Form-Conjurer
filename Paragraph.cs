@@ -29,6 +29,5 @@ namespace FormConjurerLib
             this.Content += input;
         }
 
-
     }
 }

@@ -7,6 +7,44 @@ namespace FormConjurerLib
 {
     public class Header : Input
     {
+
+        public Header(string Content)
+        {
+            this.Content = Content;
+            this.Id = string.Empty;
+            this.Name = string.Empty;
+            this.Class = string.Empty;
+        }
+
+        public Header(string Content, string Id)
+        {
+            this.Content = Content;
+            this.Id = Id;
+            this.Name = string.Empty;
+            this.Class = string.Empty;
+        }
+
+        public Header(string Content, string Id, string Class)
+        {
+            this.Content = Content;
+            this.Id = Id;
+            this.Class = Class;
+            this.Name = string.Empty;
+        }
+
+        public Header(string Content, string Id, string Class, string Name)
+        {
+            this.Content = Content;
+            this.Class = Class;
+            this.Id = Id;
+            this.Name = Name;
+        }
+
+        public void AddToContent(string input)
+        {
+            this.Content += input;
+        }
+
         public override string Output(string input)
         {
             string OpenTag = "<h1 id=\"" + this.Id + "\" name=\"" + this.Name + "\" class=\"" + this.Class + "\">";
@@ -15,23 +53,5 @@ namespace FormConjurerLib
             return OpenTag + input + CloseTag;
         }
 
-        public Header(string Id)
-        {
-            this.Id = Id;
-            this.Name = string.Empty;
-            this.Class = string.Empty;
-        }
-        public Header(string Id, string Class)
-        {
-            this.Id = Id;
-            this.Class = Class;
-            this.Name = string.Empty;
-        }
-        public Header(string Id, string Class, string Name)
-        {
-            this.Class = Class;
-            this.Id = Id;
-            this.Name = Name;
-        }
     }
 }

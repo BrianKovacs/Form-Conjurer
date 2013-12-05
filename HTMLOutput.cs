@@ -15,7 +15,7 @@ namespace FormConjurerLib
         private string HeadContents { get; set; }
         private string HeadCloseTage { get; set; }
         private string BodyOpenTag { get; set; }
-        private string BodyContents { get; set; }
+        private Stack<string> BodyContents { get; set; }
         private string BodyCloseTag { get; set; }
         private string HTMLCloseTag { get; set; }
 
@@ -26,15 +26,24 @@ namespace FormConjurerLib
             this.HeadOpenTag = "<head>";
             this.HeadCloseTage = "</head>";
             this.BodyOpenTag = "<body>";
-            this.BodyContents = string.Empty;
+            this.BodyContents = new Stack<string>();
             this.BodyCloseTag = "</body>";
             this.HTMLCloseTag = "</html>";
             
         }
         public void AddTagToBody(Input input){
 
-            this.BodyContents += input.Output(input.Content);
+            this.BodyContents.Push(input.Output(input.Content));
         }
+
+        public void RemoveTagFromBody()
+        {
+            if (this.BodyContents.Count > 0)
+            this.BodyContents.Pop();
+            
+        }
+        
+        
         public void AddStyleSheet(StyleSheet css)
         {
             this.HeadContents = "<link href=\"" + css.path + "\" rel =\"stylesheet\" type=\"text/css\"";
@@ -42,7 +51,14 @@ namespace FormConjurerLib
         
         public string OutPutHTML()
         {
-            HTML = DocHeader + HTMLOpenTag + HeadOpenTag + HeadContents + HeadCloseTage + BodyOpenTag + BodyContents + BodyCloseTag + HTMLCloseTag;
+            HTML = DocHeader + HTMLOpenTag + HeadOpenTag + HeadContents + HeadCloseTage + BodyOpenTag;
+            foreach (string tag in BodyContents)
+            {
+                HTML += tag;
+
+            } 
+            HTML += BodyCloseTag + HTMLCloseTag;
+
             return HTML;
         }
 
